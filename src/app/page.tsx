@@ -4,7 +4,6 @@ import Link from "next/link";
 
 import { api } from "@/server/api/index";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { CreatePost } from "./_components/create-post";
 
 export default function Home() {
   const hello = api.post.hello.useQuery({ text: "from tRPC" });
@@ -86,8 +85,6 @@ function AuthShowcase() {
         ) : (
           <p>You have no posts yet.</p>
         )}
-
-        <CreatePost />
       </div>
     </>
   );

@@ -15,9 +15,10 @@ export const runtime = "edge";
 //     headers: req.headers,
 //   });
 // };
-const context = getRequestContext();
-const handler = (req: NextRequest) =>
-  fetchRequestHandler({
+
+const handler = (req: NextRequest) => {
+  const context = getRequestContext();
+  return fetchRequestHandler({
     endpoint: "/api/trpc",
     req,
     router: appRouter,
@@ -31,5 +32,6 @@ const handler = (req: NextRequest) =>
           }
         : undefined,
   });
+};
 
 export { handler as GET, handler as POST };

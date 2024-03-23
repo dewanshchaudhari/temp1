@@ -12,7 +12,6 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { auth } from "@/server/auth";
-import { db } from "@/server/db";
 import { getRequestContext } from "@cloudflare/next-on-pages";
 import { Session } from "next-auth";
 import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
